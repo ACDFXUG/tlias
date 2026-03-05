@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.example.tlias.mapper.DeptMapper;
@@ -16,6 +17,7 @@ public class DeptServiceImpl implements DeptService {
     private DeptMapper deptMapper;
 
     @Override
+    @Cacheable(value="depts",key="#root.methodName")
     public List<Dept> findAll() {
         return deptMapper.findAll();
     }
@@ -34,6 +36,7 @@ public class DeptServiceImpl implements DeptService {
     }
 
     @Override
+    @Cacheable(value="depts",key="#id")
     public Dept getById(Integer id) {
         return deptMapper.getById(id);
     }
