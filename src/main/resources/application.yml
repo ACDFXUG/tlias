@@ -1,0 +1,36 @@
+# 对象
+# user:
+#     name: "admin"
+#     password: "password"
+
+# 列表
+# hobby:
+#   - Java
+#   - Game
+#   - Sport
+#如果数据值以0开头，必须用单引号括起来,因为会认为0开头的数字是八进制数
+
+# 项目名
+spring:
+    application:
+        name: tlias
+    datasource:
+        url: jdbc:mysql://127.0.0.1:3306/tlias
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        username: root
+        password: 123456
+    servlet:
+      multipart:
+        max-file-size: 10MB
+        max-request-size: 100MB
+          
+          
+        
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true # 开启驼峰命名
+
+logging:
+  level:
+    '[org.springframework.jdbc.support.JdbcTransactionManager]': debug
