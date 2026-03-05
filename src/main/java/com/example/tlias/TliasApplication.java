@@ -3,7 +3,9 @@ package com.example.tlias;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.server.servlet.context.ServletComponentScan;
+import org.springframework.cache.annotation.EnableCaching;
 
+@EnableCaching
 @ServletComponentScan
 @SpringBootApplication
 public class TliasApplication {
